@@ -1,0 +1,12 @@
+# Credenciais do Firebase (NUNCA enviar para o GitHub)
+firebase-config.js
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+*.swp
+*.swo
