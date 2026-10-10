@@ -122,6 +122,8 @@ tbody tr:hover{background:var(--beige-lt)}
 .btn-s:hover{background:var(--beige);border-color:var(--brown)}
 .btn-d{background:var(--err-bg);color:var(--err)}
 .btn-d:hover{background:var(--err);color:#fff}
+.btn-warn{background:var(--warn-bg);color:var(--warn);border-color:var(--warn-bg)}
+.btn-warn:hover{background:var(--warn);color:#fff}
 .btn-g{background:transparent;color:var(--text2)}
 .btn-g:hover{background:var(--beige);color:var(--brown)}
 .btn-sm{padding:5px 12px;font-size:12.5px}

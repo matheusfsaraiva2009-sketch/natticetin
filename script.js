@@ -891,6 +891,36 @@ function confirmClearAll() {
   });
 }
 
+function confirmClearMonth() {
+  const now   = new Date();
+  const year  = now.getFullYear();
+  const month = now.getMonth() + 1; // 1-12
+  const monthStr = now.toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' });
+
+  // Verifica se o registro pertence ao mês/ano atual
+  function isCurrentMonth(dateStr) {
+    if (!dateStr) return false;
+    const [y, m] = dateStr.split('-').map(Number);
+    return y === year && m === month;
+  }
+
+  confirm2(
+    `Apagar todos os dados de ${monthStr}? Registros de outros meses não serão afetados. Esta ação não pode ser desfeita!`,
+    () => {
+      const collections = ['expenses','production','sales','gifts','losses'];
+      let total = 0;
+      collections.forEach(k => {
+        const all      = DB.get(k);
+        const filtered = all.filter(r => !isCurrentMonth(r.date));
+        total += all.length - filtered.length;
+        DB.set(k, filtered);
+      });
+      toast(`${total} registro(s) de ${monthStr} apagados.`, 'warn');
+      renderAll();
+    }
+  );
+}
+
 // ── BACKUP ───────────────────────────────────────
 function exportBackup() {
   const data = {
