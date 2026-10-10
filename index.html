@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Nati Cetim — Sistema de Gestão</title>
-<meta name="description" content="Sistema de gestão completo para a marca Nati Cetim — produção, estoque, vendas, brindes e financeiro.">
+<title>Nat Cetim — Gestão</title>
+<meta name="description" content="Sistema de gestão simples para a Nat Cetim — controle de gastos, produção, vendas, brindes e estoque.">
 <link rel="stylesheet" href="style.css">
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 <script src="firebase-config.js"></script>
@@ -31,40 +30,30 @@
         <path d="M-50 7 Q-34 1 -16 7 Q-2 12 8 7" fill="none" stroke="rgba(253,250,245,.4)" stroke-width="1.5"/>
         <path d="M14 7 Q30 1 44 7 Q54 10 60 7" fill="none" stroke="rgba(253,250,245,.4)" stroke-width="1.5"/>
       </g>
-      <text x="100" y="141" text-anchor="middle" font-family="Georgia,serif" font-size="19" font-weight="bold" fill="rgba(253,250,245,.9)" letter-spacing="3">NATI CETIM</text>
+      <text x="100" y="141" text-anchor="middle" font-family="Georgia,serif" font-size="19" font-weight="bold" fill="rgba(253,250,245,.9)" letter-spacing="3">NAT CETIM</text>
       <line x1="42" y1="150" x2="88" y2="150" stroke="rgba(253,250,245,.38)" stroke-width=".8"/>
       <text x="100" y="154" text-anchor="middle" font-size="7" fill="rgba(253,250,245,.65)">&#9829;</text>
       <line x1="112" y1="150" x2="158" y2="150" stroke="rgba(253,250,245,.38)" stroke-width=".8"/>
       <text x="100" y="169" text-anchor="middle" font-family="Arial,sans-serif" font-size="6.5" fill="rgba(253,250,245,.42)" letter-spacing="2.5">UM TOQUE DE CUIDADO</text>
     </svg>
-    <div class="brand-name">Nati Cetim</div>
+    <div class="brand-name">Nat Cetim</div>
     <div class="brand-tag">um toque de cuidado</div>
   </div>
 
   <nav class="sb-nav">
     <div class="nav-sec">Principal</div>
     <div class="nav-item active" data-s="dashboard" onclick="nav('dashboard')">
-      <svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Visão Geral
+      <svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Resumo
     </div>
-    <div class="nav-sec">Catálogo</div>
-    <div class="nav-item" data-s="products" onclick="nav('products')">
-      <svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>Produtos
+    <div class="nav-sec">Registros</div>
+    <div class="nav-item" data-s="expenses" onclick="nav('expenses')">
+      <svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>Gastos
     </div>
-    <div class="nav-item" data-s="materials" onclick="nav('materials')">
-      <svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>Matéria-prima
-    </div>
-    <div class="nav-sec">Operações</div>
     <div class="nav-item" data-s="production" onclick="nav('production')">
       <svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>Produção
     </div>
-    <div class="nav-item" data-s="stock" onclick="nav('stock')">
-      <svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8h14M5 8a2 2 0 1 0 0-4h14a2 2 0 1 0 0 4M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8M10 12h4"/></svg>Estoque
-    </div>
     <div class="nav-item" data-s="sales" onclick="nav('sales')">
       <svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>Vendas
-    </div>
-    <div class="nav-item" data-s="clients" onclick="nav('clients')">
-      <svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Clientes
     </div>
     <div class="nav-item" data-s="gifts" onclick="nav('gifts')">
       <svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>Brindes
@@ -72,32 +61,26 @@
     <div class="nav-item" data-s="losses" onclick="nav('losses')">
       <svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Perdas
     </div>
-    <div class="nav-sec">Financeiro</div>
-    <div class="nav-item" data-s="expenses" onclick="nav('expenses')">
-      <svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>Despesas
-    </div>
-    <div class="nav-item" data-s="financial" onclick="nav('financial')">
-      <svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Financeiro
-    </div>
-    <div class="nav-item" data-s="reports" onclick="nav('reports')">
-      <svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Relatórios
+    <div class="nav-sec">Estoque</div>
+    <div class="nav-item" data-s="stock" onclick="nav('stock')">
+      <svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8h14M5 8a2 2 0 1 0 0-4h14a2 2 0 1 0 0 4M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8M10 12h4"/></svg>Estoque
     </div>
     <div class="nav-sec">Sistema</div>
     <div class="nav-item" data-s="settings" onclick="nav('settings')">
       <svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Configurações
     </div>
   </nav>
-  <div class="sb-foot">Nati Cetim &copy; <span id="yr"></span></div>
+  <div class="sb-foot">Nat Cetim &copy; <span id="yr"></span></div>
 </aside>
 
 <!-- ═══ MAIN ═══ -->
 <div class="main">
   <header class="header">
     <div class="hd-left">
-      <button class="menu-btn" onclick="toggleSB()">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <button class="menu-btn" id="menu-btn" onclick="toggleSB()">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
-      <span id="page-title">Visão Geral</span>
+      <span id="page-title">Resumo</span>
     </div>
     <div class="hd-right"><span class="hd-date" id="hd-date"></span></div>
   </header>
@@ -106,87 +89,67 @@
 
     <!-- ─── DASHBOARD ─── -->
     <section class="section active" id="sec-dashboard">
-      <div class="fb" id="dash-fb">
-        <button class="f-btn active" onclick="setDF('today',this)">Hoje</button>
-        <button class="f-btn" onclick="setDF('week',this)">Semana</button>
-        <button class="f-btn" onclick="setDF('month',this)">Mês</button>
-        <button class="f-btn" onclick="setDF('year',this)">Ano</button>
-        <button class="f-btn" onclick="setDF('all',this)">Tudo</button>
-      </div>
       <div class="sg" id="dash-stats"></div>
       <div class="g2">
-        <div class="card"><div class="ch"><span class="ct">Vendas e Custos (mensal)</span></div><div class="cb"><div class="cw"><canvas id="ch-sales"></canvas></div></div></div>
-        <div class="card"><div class="ch"><span class="ct">Estoque por Produto</span></div><div class="cb"><div class="cw"><canvas id="ch-stock"></canvas></div></div></div>
-      </div>
-      <div class="card" id="low-card" style="display:none">
-        <div class="ch"><span class="ct" style="color:var(--warn)">&#9888; Estoque Baixo</span></div>
-        <div class="cb" id="low-body"></div>
-      </div>
-      <div class="card">
-        <div class="ch"><span class="ct">Últimas Vendas</span><button class="btn btn-g btn-sm" onclick="nav('sales')">Ver todas</button></div>
-        <div class="cb" id="recent-sales"></div>
-      </div>
-    </section>
-
-    <!-- ─── PRODUCTS ─── -->
-    <section class="section" id="sec-products">
-      <div class="ph">
-        <div><h1>Produtos</h1><p>Gerencie o catálogo da Nati Cetim</p></div>
-        <div class="ph-r">
-          <div class="sw"><svg class="sic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="text" id="prod-search" placeholder="Buscar..." oninput="renderProds()"></div>
-          <button class="btn btn-p" onclick="openProdModal()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Novo Produto</button>
+        <div class="card">
+          <div class="ch"><span class="ct">Últimas Vendas</span><button class="btn btn-g btn-sm" onclick="nav('sales')">Ver todas</button></div>
+          <div class="cb" id="recent-sales"><div class="empty-inline">Nenhuma venda registrada.</div></div>
+        </div>
+        <div class="card">
+          <div class="ch"><span class="ct">Últimos Gastos</span><button class="btn btn-g btn-sm" onclick="nav('expenses')">Ver todos</button></div>
+          <div class="cb" id="recent-expenses"><div class="empty-inline">Nenhum gasto registrado.</div></div>
         </div>
       </div>
-      <div class="fb" id="prod-fb">
-        <button class="f-btn active" onclick="setPF('all',this)">Todos</button>
-        <button class="f-btn" onclick="setPF('ativo',this)">Ativos</button>
-        <button class="f-btn" onclick="setPF('arquivado',this)">Arquivados</button>
+      <div class="card">
+        <div class="ch"><span class="ct">Estoque Atual</span><button class="btn btn-g btn-sm" onclick="nav('stock')">Ver estoque</button></div>
+        <div class="cb" id="dash-stock"></div>
       </div>
-      <div class="card"><div class="tw"><table><thead><tr><th>Produto</th><th>SKU</th><th>Cor/Tam.</th><th>Preço</th><th>Custo</th><th>Estoque</th><th>Status</th><th></th></tr></thead><tbody id="prod-tb"></tbody></table></div><div id="prod-empty" class="empty" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg><h3>Nenhum produto</h3><p>Clique em "Novo Produto" para começar.</p></div></div>
     </section>
 
-    <!-- ─── MATERIALS ─── -->
-    <section class="section" id="sec-materials">
+    <!-- ─── GASTOS (EXPENSES) ─── -->
+    <section class="section" id="sec-expenses">
       <div class="ph">
-        <div><h1>Matéria-prima</h1><p>Controle materiais e insumos</p></div>
-        <div class="ph-r"><button class="btn btn-p" onclick="openMatModal()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Novo Material</button></div>
+        <div><h1>Gastos</h1><p>Registre cada gasto da marca</p></div>
+        <div class="ph-r">
+          <button class="btn btn-p" id="btn-new-expense" onclick="openExpModal()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Novo Gasto
+          </button>
+        </div>
       </div>
-      <div class="card"><div class="tw"><table><thead><tr><th>Material</th><th>Unidade</th><th>Disponível</th><th>Comprado</th><th>Custo/Un.</th><th>Fornecedor</th><th>Data</th><th></th></tr></thead><tbody id="mat-tb"></tbody></table></div><div id="mat-empty" class="empty" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/></svg><h3>Nenhum material</h3><p>Registre materiais utilizados na produção.</p></div></div>
+      <div class="fb" id="exp-fb">
+        <button class="f-btn active" onclick="setEF('all',this)">Todos</button>
+        <button class="f-btn" onclick="setEF('material',this)">Material</button>
+        <button class="f-btn" onclick="setEF('embalagem',this)">Embalagem</button>
+        <button class="f-btn" onclick="setEF('frete',this)">Frete</button>
+        <button class="f-btn" onclick="setEF('divulgacao',this)">Divulgação</button>
+        <button class="f-btn" onclick="setEF('outro',this)">Outros</button>
+      </div>
+      <div class="total-bar" id="exp-total-bar"></div>
+      <div class="card"><div class="tw"><table><thead><tr><th>Data</th><th>Descrição</th><th>Categoria</th><th>Valor</th><th></th></tr></thead><tbody id="exp-tb"></tbody></table></div><div id="exp-empty" class="empty" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg><h3>Nenhum gasto</h3><p>Clique em "Novo Gasto" para registrar.</p></div></div>
     </section>
 
-    <!-- ─── PRODUCTION ─── -->
+    <!-- ─── PRODUÇÃO ─── -->
     <section class="section" id="sec-production">
       <div class="ph">
-        <div><h1>Produção</h1><p>Registre lotes e controle custos</p></div>
-        <div class="ph-r"><button class="btn btn-p" onclick="openBatchModal()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Novo Lote</button></div>
+        <div><h1>Produção</h1><p>Registre o que você fabricou</p></div>
+        <div class="ph-r">
+          <button class="btn btn-p" id="btn-new-prod" onclick="openProdModal()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Registrar Produção
+          </button>
+        </div>
       </div>
-      <div class="card"><div class="tw"><table><thead><tr><th>Lote</th><th>Produto</th><th>Data</th><th>Qtd</th><th>Custo Total</th><th>Custo/Un.</th><th></th></tr></thead><tbody id="batch-tb"></tbody></table></div><div id="batch-empty" class="empty" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4"/></svg><h3>Nenhum lote</h3><p>Crie o primeiro lote de produção.</p></div></div>
+      <div class="card"><div class="tw"><table><thead><tr><th>Data</th><th>Produto</th><th>Tamanho</th><th>Quantidade</th><th></th></tr></thead><tbody id="prod-tb"></tbody></table></div><div id="prod-empty" class="empty" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4"/></svg><h3>Nenhuma produção</h3><p>Clique em "Registrar Produção" para começar.</p></div></div>
     </section>
 
-    <!-- ─── STOCK ─── -->
-    <section class="section" id="sec-stock">
-      <div class="ph">
-        <div><h1>Estoque</h1><p>Posição atual e movimentações</p></div>
-        <div class="ph-r"><button class="btn btn-s" onclick="openAdjModal()">Ajuste Manual</button></div>
-      </div>
-      <div class="sg" id="stock-stats"></div>
-      <div class="tabs">
-        <button class="tab-btn active" onclick="switchTab('stock','position',this)">Posição Atual</button>
-        <button class="tab-btn" onclick="switchTab('stock','movements',this)">Movimentações</button>
-      </div>
-      <div class="tab-pane active" id="stock-position">
-        <div class="card"><div class="tw"><table><thead><tr><th>Produto</th><th>Cor/Tam.</th><th>Estoque</th><th>Mínimo</th><th>Status</th><th>Valor em Estoque</th></tr></thead><tbody id="stock-tb"></tbody></table></div></div>
-      </div>
-      <div class="tab-pane" id="stock-movements">
-        <div class="card"><div class="tw"><table><thead><tr><th>Data</th><th>Produto</th><th>Tipo</th><th>Qtd</th><th>Custo</th><th>Referência</th></tr></thead><tbody id="mv-tb"></tbody></table></div></div>
-      </div>
-    </section>
-
-    <!-- ─── SALES ─── -->
+    <!-- ─── VENDAS ─── -->
     <section class="section" id="sec-sales">
       <div class="ph">
-        <div><h1>Vendas</h1><p>Registre e acompanhe vendas</p></div>
-        <div class="ph-r"><button class="btn btn-p" onclick="openSaleModal()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Nova Venda</button></div>
+        <div><h1>Vendas</h1><p>Registre e acompanhe suas vendas</p></div>
+        <div class="ph-r">
+          <button class="btn btn-p" id="btn-new-sale" onclick="openSaleModal()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Nova Venda
+          </button>
+        </div>
       </div>
       <div class="fb" id="sale-fb">
         <button class="f-btn active" onclick="setSF('all',this)">Todas</button>
@@ -194,118 +157,70 @@
         <button class="f-btn" onclick="setSF('pendente',this)">Pendentes</button>
         <button class="f-btn" onclick="setSF('cancelado',this)">Canceladas</button>
       </div>
-      <div class="card"><div class="tw"><table><thead><tr><th>Código</th><th>Data</th><th>Cliente</th><th>Itens</th><th>Total</th><th>Pagamento</th><th>Status</th><th></th></tr></thead><tbody id="sales-tb"></tbody></table></div><div id="sales-empty" class="empty" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><h3>Nenhuma venda</h3><p>Clique em "Nova Venda" para registrar.</p></div></div>
+      <div class="card"><div class="tw"><table><thead><tr><th>Data</th><th>Produto</th><th>Tam.</th><th>Qtd.</th><th>Preço Unit.</th><th>Total</th><th>Status</th><th></th></tr></thead><tbody id="sales-tb"></tbody></table></div><div id="sales-empty" class="empty" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><h3>Nenhuma venda</h3><p>Clique em "Nova Venda" para registrar.</p></div></div>
     </section>
 
-    <!-- ─── CLIENTS ─── -->
-    <section class="section" id="sec-clients">
-      <div class="ph">
-        <div><h1>Clientes</h1><p>Gerencie sua base de clientes</p></div>
-        <div class="ph-r"><button class="btn btn-p" onclick="openClientModal()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Novo Cliente</button></div>
-      </div>
-      <div class="card"><div class="tw"><table><thead><tr><th>Nome</th><th>Telefone</th><th>Email</th><th>Compras</th><th>Total Gasto</th><th>Cadastrado</th><th></th></tr></thead><tbody id="clients-tb"></tbody></table></div><div id="clients-empty" class="empty" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><h3>Nenhum cliente</h3><p>Clientes podem ser adicionados ao registrar vendas.</p></div></div>
-    </section>
-
-    <!-- ─── GIFTS ─── -->
+    <!-- ─── BRINDES ─── -->
     <section class="section" id="sec-gifts">
       <div class="ph">
         <div><h1>Brindes</h1><p>Produtos entregues gratuitamente</p></div>
-        <div class="ph-r"><button class="btn btn-p" onclick="openGiftModal()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Novo Brinde</button></div>
+        <div class="ph-r">
+          <button class="btn btn-p" id="btn-new-gift" onclick="openGiftModal()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Novo Brinde
+          </button>
+        </div>
       </div>
-      <div class="sg" id="gift-stats"></div>
-      <div class="card"><div class="tw"><table><thead><tr><th>Data</th><th>Produto</th><th>Qtd</th><th>Destinatário</th><th>Motivo</th><th>Custo Total</th><th></th></tr></thead><tbody id="gifts-tb"></tbody></table></div><div id="gifts-empty" class="empty" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/></svg><h3>Nenhum brinde</h3><p>Registre brindes entregues para divulgação ou clientes.</p></div></div>
+      <div class="card"><div class="tw"><table><thead><tr><th>Data</th><th>Produto</th><th>Tamanho</th><th>Quantidade</th><th></th></tr></thead><tbody id="gifts-tb"></tbody></table></div><div id="gifts-empty" class="empty" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/></svg><h3>Nenhum brinde</h3><p>Clique em "Novo Brinde" para registrar.</p></div></div>
     </section>
 
-    <!-- ─── LOSSES ─── -->
+    <!-- ─── PERDAS ─── -->
     <section class="section" id="sec-losses">
       <div class="ph">
-        <div><h1>Perdas e Avarias</h1><p>Produtos perdidos ou danificados</p></div>
-        <div class="ph-r"><button class="btn btn-p" onclick="openLossModal()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Registrar Perda</button></div>
-      </div>
-      <div class="card"><div class="tw"><table><thead><tr><th>Data</th><th>Produto</th><th>Qtd</th><th>Motivo</th><th>Lote</th><th>Custo</th><th></th></tr></thead><tbody id="losses-tb"></tbody></table></div><div id="losses-empty" class="empty" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg><h3>Nenhuma perda</h3><p>Registre produtos perdidos ou danificados.</p></div></div>
-    </section>
-
-    <!-- ─── EXPENSES ─── -->
-    <section class="section" id="sec-expenses">
-      <div class="ph">
-        <div><h1>Despesas</h1><p>Controle despesas operacionais</p></div>
-        <div class="ph-r"><button class="btn btn-p" onclick="openExpModal()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Nova Despesa</button></div>
-      </div>
-      <div class="fb" id="exp-fb">
-        <button class="f-btn active" onclick="setEF('all',this)">Todas</button>
-        <button class="f-btn" onclick="setEF('embalagem',this)">Embalagem</button>
-        <button class="f-btn" onclick="setEF('frete',this)">Frete</button>
-        <button class="f-btn" onclick="setEF('divulgacao',this)">Divulgação</button>
-        <button class="f-btn" onclick="setEF('equipamento',this)">Equipamento</button>
-        <button class="f-btn" onclick="setEF('outro',this)">Outros</button>
-      </div>
-      <div class="card"><div class="tw"><table><thead><tr><th>Data</th><th>Descrição</th><th>Categoria</th><th>Valor</th><th>Pagamento</th><th>Status</th><th></th></tr></thead><tbody id="exp-tb"></tbody></table></div><div id="exp-empty" class="empty" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg><h3>Nenhuma despesa</h3><p>Registre despesas para o controle financeiro completo.</p></div></div>
-    </section>
-
-    <!-- ─── FINANCIAL ─── -->
-    <section class="section" id="sec-financial">
-      <div class="ph">
-        <div><h1>Financeiro</h1><p>Resultado detalhado da marca</p></div>
+        <div><h1>Perdas</h1><p>Produtos perdidos ou danificados</p></div>
         <div class="ph-r">
-          <button class="f-btn active" onclick="setFF('month',this)" id="ff-month">Mês Atual</button>
-          <button class="f-btn" onclick="setFF('year',this)">Ano</button>
-          <button class="f-btn" onclick="setFF('all',this)">Tudo</button>
+          <button class="btn btn-p" id="btn-new-loss" onclick="openLossModal()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Registrar Perda
+          </button>
         </div>
       </div>
-      <div class="sg" id="fin-stats"></div>
-      <div class="g2">
-        <div class="card"><div class="ch"><span class="ct">Demonstrativo de Resultado</span></div><div class="cb" id="fin-dre"></div></div>
-        <div class="card"><div class="ch"><span class="ct">Evolução Mensal</span></div><div class="cb"><div class="cw"><canvas id="ch-fin"></canvas></div></div></div>
-      </div>
-      <div class="g2">
-        <div class="card"><div class="ch"><span class="ct">Despesas por Categoria</span></div><div class="cb"><div class="cw"><canvas id="ch-exp"></canvas></div></div></div>
-        <div class="card"><div class="ch"><span class="ct">Brindes e Perdas</span></div><div class="cb" id="fin-gl"></div></div>
-      </div>
+      <div class="card"><div class="tw"><table><thead><tr><th>Data</th><th>Produto</th><th>Tamanho</th><th>Quantidade</th><th>Motivo</th><th></th></tr></thead><tbody id="losses-tb"></tbody></table></div><div id="losses-empty" class="empty" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg><h3>Nenhuma perda</h3><p>Registre aqui produtos perdidos ou danificados.</p></div></div>
     </section>
 
-    <!-- ─── REPORTS ─── -->
-    <section class="section" id="sec-reports">
-      <div class="ph"><div><h1>Relatórios</h1><p>Dados filtráveis e exportação</p></div></div>
-      <div class="card">
-        <div class="ch"><span class="ct">Filtros</span></div>
-        <div class="cb">
-          <div class="fg fg3">
-            <div class="fgi"><label>Tipo</label><select id="rep-type" onchange="renderReport()"><option value="sales">Vendas</option><option value="production">Produção</option><option value="stock">Estoque</option><option value="gifts">Brindes</option><option value="losses">Perdas</option><option value="expenses">Despesas</option><option value="movements">Movimentações</option></select></div>
-            <div class="fgi"><label>De</label><input type="date" id="rep-from" onchange="renderReport()"></div>
-            <div class="fgi"><label>Até</label><input type="date" id="rep-to" onchange="renderReport()"></div>
-          </div>
-        </div>
+    <!-- ─── ESTOQUE ─── -->
+    <section class="section" id="sec-stock">
+      <div class="ph">
+        <div><h1>Estoque</h1><p>Calculado automaticamente: Produção − Vendas − Brindes − Perdas</p></div>
       </div>
-      <div class="card">
-        <div class="ch">
-          <span class="ct" id="rep-title">Relatório de Vendas</span>
-          <div style="display:flex;gap:8px">
-            <button class="btn btn-s btn-sm" onclick="exportCSV()">Exportar CSV</button>
-            <button class="btn btn-s btn-sm" onclick="exportPDF()">Imprimir/PDF</button>
-          </div>
-        </div>
-        <div class="cb" id="rep-body"></div>
-      </div>
+      <div class="card"><div class="tw"><table><thead><tr><th>Produto</th><th>Tamanho</th><th>Produzido</th><th>Vendido</th><th>Brinde</th><th>Perdas</th><th>Em Estoque</th></tr></thead><tbody id="stock-tb"></tbody></table></div><div id="stock-empty" class="empty" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8h14M5 8a2 2 0 1 0 0-4h14a2 2 0 1 0 0 4M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8M10 12h4"/></svg><h3>Nenhum produto em estoque</h3><p>Registre produções para ver o estoque.</p></div></div>
     </section>
 
-    <!-- ─── SETTINGS ─── -->
+    <!-- ─── CONFIGURAÇÕES ─── -->
     <section class="section" id="sec-settings">
-      <div class="ph"><div><h1>Configurações</h1><p>Configurações gerais do sistema</p></div></div>
+      <div class="ph"><div><h1>Configurações</h1><p>Configurações do sistema</p></div></div>
       <div class="g2">
         <div class="card">
-          <div class="ch"><span class="ct">Dados da Marca</span></div>
+          <div class="ch"><span class="ct">Produtos Cadastrados</span></div>
           <div class="cb">
-            <div class="fg">
-              <div class="fgi"><label>Nome da Marca</label><input type="text" id="cfg-brand" value="Nati Cetim"></div>
-              <div class="fgi"><label>Responsável</label><input type="text" id="cfg-owner" placeholder="Nome da proprietária"></div>
-              <div class="fgi"><label>Telefone</label><input type="text" id="cfg-phone" placeholder="(00) 00000-0000"></div>
-              <div class="fgi"><label>Email</label><input type="email" id="cfg-email" placeholder="email@exemplo.com"></div>
-              <div class="fgi"><label>Estoque Mínimo Padrão</label><input type="number" id="cfg-min" value="5" min="0"></div>
+            <p style="font-size:13px;color:var(--text2);margin-bottom:14px">Gerencie os produtos que aparecem nas seleções de produção, venda, brinde e perda.</p>
+            <div id="products-list" style="margin-bottom:14px"></div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <input type="text" id="new-product-name" placeholder="Nome do produto (ex: Touca de cetim)" style="flex:1;min-width:150px">
+              <button class="btn btn-p" onclick="addProduct()">Adicionar</button>
             </div>
-            <div style="margin-top:16px"><button class="btn btn-p" onclick="saveSettings()">Salvar</button></div>
           </div>
         </div>
         <div>
+          <div class="card" style="margin-bottom:18px">
+            <div class="ch"><span class="ct">&#9729; Sincronização com Nuvem</span></div>
+            <div class="cb">
+              <div id="fb-status" style="display:flex;align-items:center;gap:8px;margin-bottom:14px;font-size:13px;color:var(--text2)">
+                <span id="fb-dot" style="width:10px;height:10px;border-radius:50%;background:var(--border);flex-shrink:0"></span>
+                <span id="fb-msg">Verificando Firebase...</span>
+              </div>
+              <button class="btn btn-s" onclick="FSync.syncNow()" style="margin-right:8px">&#9729; Sincronizar Agora</button>
+              <button class="btn btn-g btn-sm" onclick="FSync.pull()">&#8659; Restaurar da Nuvem</button>
+            </div>
+          </div>
           <div class="card" style="margin-bottom:18px">
             <div class="ch"><span class="ct">Backup</span></div>
             <div class="cb">
@@ -314,20 +229,6 @@
                 <button class="btn btn-s" onclick="exportBackup()">Exportar Backup</button>
                 <label class="btn btn-s" style="cursor:pointer">Importar Backup<input type="file" accept=".json" onchange="importBackup(this)" style="display:none"></label>
               </div>
-            </div>
-          </div>
-          <div class="card" style="margin-bottom:18px">
-            <div class="ch"><span class="ct">&#9729; Sincronização com Nuvem</span></div>
-            <div class="cb">
-              <div id="fb-status" style="display:flex;align-items:center;gap:8px;margin-bottom:14px;font-size:13px;color:var(--text2)">
-                <span id="fb-dot" style="width:10px;height:10px;border-radius:50%;background:var(--border);flex-shrink:0"></span>
-                <span id="fb-msg">Verificando Firebase...</span>
-              </div>
-              <div style="font-size:12.5px;color:var(--text2);margin-bottom:14px;line-height:1.6">
-                Para ativar: abra o arquivo <code>firebase-config.js</code> no bloco de notas, preencha as credenciais do Firebase e mude <code>FIREBASE_ENABLED</code> para <code>true</code>.
-              </div>
-              <button class="btn btn-s" onclick="FSync.syncNow()" style="margin-right:8px">&#9729; Sincronizar Agora</button>
-              <button class="btn btn-g btn-sm" onclick="FSync.pull()">&#8659; Restaurar da Nuvem</button>
             </div>
           </div>
           <div class="card">
@@ -347,230 +248,103 @@
 
 <!-- ═══ MODALS ═══ -->
 
-<!-- Product -->
-<div class="ov" id="ov-product">
-  <div class="modal">
-    <div class="mh"><span class="mt" id="prod-modal-title">Novo Produto</span><button class="mx" onclick="closeOv('ov-product')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
-    <div class="mb">
-      <input type="hidden" id="p-id">
-      <div class="fg fg2">
-        <div class="fgi sp2"><label>Nome *</label><input type="text" id="p-name" placeholder="Ex: Touca de Cetim Adulto"></div>
-        <div class="fgi"><label>Categoria *</label><select id="p-cat"><option value="">Selecione...</option><option>Toucas</option><option>Xuxinhas</option><option>Kits</option><option>Outros</option></select></div>
-        <div class="fgi"><label>SKU</label><input type="text" id="p-sku" placeholder="TC-RS-AD-001"></div>
-        <div class="fgi"><label>Cor</label><input type="text" id="p-color" placeholder="Rosa, Preto, Bege..."></div>
-        <div class="fgi"><label>Tamanho</label><select id="p-size"><option value="">—</option><option>Infantil</option><option>Adulto</option><option>PP</option><option>P</option><option>M</option><option>G</option><option>GG</option><option>Único</option></select></div>
-        <div class="fgi"><label>Preço de Venda *</label><div class="ig"><span class="ip">R$</span><input type="number" id="p-price" min="0" step="0.01" placeholder="0,00"></div></div>
-        <div class="fgi"><label>Custo Estimado</label><div class="ig"><span class="ip">R$</span><input type="number" id="p-cost" min="0" step="0.01" placeholder="0,00"></div></div>
-        <div class="fgi"><label>Estoque Mínimo</label><input type="number" id="p-min" min="0" value="5"></div>
-        <div class="fgi"><label>Status</label><select id="p-status"><option value="ativo">Ativo</option><option value="arquivado">Arquivado</option></select></div>
-        <div class="fgi sp2"><label>Descrição</label><textarea id="p-desc" placeholder="Descrição opcional..."></textarea></div>
-      </div>
-    </div>
-    <div class="mf"><button class="btn btn-s" onclick="closeOv('ov-product')">Cancelar</button><button class="btn btn-p" onclick="saveProd()">Salvar Produto</button></div>
-  </div>
-</div>
-
-<!-- Material -->
-<div class="ov" id="ov-material">
-  <div class="modal">
-    <div class="mh"><span class="mt" id="mat-modal-title">Novo Material</span><button class="mx" onclick="closeOv('ov-material')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
-    <div class="mb">
-      <input type="hidden" id="m-id">
-      <div class="fg fg2">
-        <div class="fgi sp2"><label>Nome *</label><input type="text" id="m-name" placeholder="Ex: Cetim Rosa, Elástico"></div>
-        <div class="fgi"><label>Unidade *</label><select id="m-unit"><option value="metros">Metros</option><option value="centímetros">Centímetros</option><option value="unidades">Unidades</option><option value="rolos">Rolos</option><option value="kg">Kg</option><option value="gramas">Gramas</option><option value="pacotes">Pacotes</option></select></div>
-        <div class="fgi"><label>Qtd. Comprada *</label><input type="number" id="m-qty" min="0" step="0.01" placeholder="0" oninput="calcMatCPU()"></div>
-        <div class="fgi"><label>Preço Total *</label><div class="ig"><span class="ip">R$</span><input type="number" id="m-price" min="0" step="0.01" placeholder="0,00" oninput="calcMatCPU()"></div></div>
-        <div class="fgi"><label>Fornecedor</label><input type="text" id="m-supplier" placeholder="Nome do fornecedor"></div>
-        <div class="fgi"><label>Data da Compra</label><input type="date" id="m-date"></div>
-        <div class="fgi sp2"><div style="background:var(--bg2);border-radius:var(--rs);padding:10px 13px;font-size:13px;color:var(--text2)">Custo por unidade: <strong id="m-cpu" style="color:var(--black)">R$ 0,00</strong></div></div>
-      </div>
-    </div>
-    <div class="mf"><button class="btn btn-s" onclick="closeOv('ov-material')">Cancelar</button><button class="btn btn-p" onclick="saveMat()">Salvar Material</button></div>
-  </div>
-</div>
-
-<!-- Production -->
-<div class="ov" id="ov-production">
-  <div class="modal mlg">
-    <div class="mh"><span class="mt">Novo Lote de Produção</span><button class="mx" onclick="closeOv('ov-production')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
-    <div class="mb">
-      <input type="hidden" id="b-id">
-      <div class="fg fg2">
-        <div class="fgi"><label>Produto *</label><select id="b-prod"><option value="">Selecione...</option></select></div>
-        <div class="fgi"><label>Código do Lote</label><input type="text" id="b-code" placeholder="Auto-gerado se vazio"></div>
-        <div class="fgi"><label>Quantidade *</label><input type="number" id="b-qty" min="1" placeholder="0" oninput="calcBatch()"></div>
-        <div class="fgi"><label>Data *</label><input type="date" id="b-date"></div>
-      </div>
-      <div style="margin:14px 0 8px;font-size:12px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.7px">Materiais Utilizados</div>
-      <div id="bm-list"></div>
-      <button class="btn btn-g btn-sm" onclick="addBM()" style="margin-top:8px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Adicionar Material</button>
-      <div style="margin:14px 0 8px;font-size:12px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.7px">Outros Custos</div>
-      <div class="fg fg2">
-        <div class="fgi"><label>Mão de Obra</label><div class="ig"><span class="ip">R$</span><input type="number" id="b-labor" min="0" step="0.01" placeholder="0,00" oninput="calcBatch()"></div></div>
-        <div class="fgi"><label>Outros</label><div class="ig"><span class="ip">R$</span><input type="number" id="b-other" min="0" step="0.01" placeholder="0,00" oninput="calcBatch()"></div></div>
-        <div class="fgi sp2"><label>Observações</label><textarea id="b-notes" placeholder="Observações..."></textarea></div>
-      </div>
-      <div class="sum" id="b-sum">
-        <div class="sr"><span>Materiais:</span><span id="b-mat-cost">R$ 0,00</span></div>
-        <div class="sr"><span>Mão de obra:</span><span id="b-lab-cost">R$ 0,00</span></div>
-        <div class="sr"><span>Outros:</span><span id="b-oth-cost">R$ 0,00</span></div>
-        <div class="sr tot"><span>Custo Total:</span><span id="b-total">R$ 0,00</span></div>
-        <div class="sr" style="margin-top:4px"><span>Custo por unidade:</span><span id="b-unit">R$ 0,00</span></div>
-      </div>
-    </div>
-    <div class="mf"><button class="btn btn-s" onclick="closeOv('ov-production')">Cancelar</button><button class="btn btn-p" onclick="saveBatch()">Finalizar Produção</button></div>
-  </div>
-</div>
-
-<!-- Sale -->
-<div class="ov" id="ov-sale">
-  <div class="modal mlg">
-    <div class="mh"><span class="mt" id="sale-modal-title">Nova Venda</span><button class="mx" onclick="closeOv('ov-sale')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
-    <div class="mb">
-      <input type="hidden" id="s-id">
-      <div class="fg fg2">
-        <div class="fgi"><label>Data *</label><input type="date" id="s-date"></div>
-        <div class="fgi"><label>Cliente</label><select id="s-client"><option value="">Anônimo</option></select></div>
-        <div class="fgi"><label>Pagamento</label><select id="s-pay"><option>Pix</option><option>Dinheiro</option><option>Cartão de crédito</option><option>Cartão de débito</option><option>Transferência</option></select></div>
-        <div class="fgi"><label>Status</label><select id="s-status"><option value="pago">Pago</option><option value="pendente">Pendente</option></select></div>
-      </div>
-      <div style="margin:14px 0 8px;font-size:12px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.7px">Itens da Venda</div>
-      <div class="sih"><div>Produto</div><div>Qtd</div><div>Preço Unit.</div><div>Subtotal</div><div></div></div>
-      <div id="s-items"></div>
-      <button class="btn btn-g btn-sm" onclick="addSI()" style="margin-top:8px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Adicionar Item</button>
-      <div class="fg fg2" style="margin-top:14px">
-        <div class="fgi"><label>Desconto (R$)</label><div class="ig"><span class="ip">R$</span><input type="number" id="s-disc" min="0" step="0.01" value="0" oninput="calcSale()"></div></div>
-        <div class="fgi"><label>Observações</label><input type="text" id="s-notes" placeholder="Obs..."></div>
-      </div>
-      <div class="sum">
-        <div class="sr"><span>Subtotal:</span><span id="s-sub">R$ 0,00</span></div>
-        <div class="sr"><span>Desconto:</span><span id="s-dv">R$ 0,00</span></div>
-        <div class="sr tot"><span>Total:</span><span id="s-total">R$ 0,00</span></div>
-      </div>
-    </div>
-    <div class="mf"><button class="btn btn-s" onclick="closeOv('ov-sale')">Cancelar</button><button class="btn btn-p" onclick="saveSale()">Registrar Venda</button></div>
-  </div>
-</div>
-
-<!-- Client -->
-<div class="ov" id="ov-client">
-  <div class="modal msm">
-    <div class="mh"><span class="mt" id="cli-modal-title">Novo Cliente</span><button class="mx" onclick="closeOv('ov-client')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
-    <div class="mb">
-      <input type="hidden" id="c-id">
-      <div class="fg">
-        <div class="fgi"><label>Nome *</label><input type="text" id="c-name" placeholder="Nome completo"></div>
-        <div class="fgi"><label>Telefone</label><input type="text" id="c-phone" placeholder="(00) 00000-0000"></div>
-        <div class="fgi"><label>Email</label><input type="email" id="c-email" placeholder="email@exemplo.com"></div>
-        <div class="fgi"><label>Observações</label><textarea id="c-notes" placeholder="Informações adicionais..."></textarea></div>
-      </div>
-    </div>
-    <div class="mf"><button class="btn btn-s" onclick="closeOv('ov-client')">Cancelar</button><button class="btn btn-p" onclick="saveClient()">Salvar</button></div>
-  </div>
-</div>
-
-<!-- Gift -->
-<div class="ov" id="ov-gift">
-  <div class="modal">
-    <div class="mh"><span class="mt" id="gift-modal-title">Registrar Brinde</span><button class="mx" onclick="closeOv('ov-gift')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
-    <div class="mb">
-      <input type="hidden" id="g-id">
-      <div class="fg fg2">
-        <div class="fgi"><label>Produto *</label><select id="g-prod" onchange="calcGift()"><option value="">Selecione...</option></select></div>
-        <div class="fgi"><label>Quantidade *</label><input type="number" id="g-qty" min="1" value="1" oninput="calcGift()"></div>
-        <div class="fgi"><label>Data *</label><input type="date" id="g-date"></div>
-        <div class="fgi"><label>Motivo *</label><select id="g-reason"><option value="divulgacao">Divulgação</option><option value="presente_cliente">Presente para cliente</option><option value="acao_promocional">Ação promocional</option><option value="parceria">Parceria</option><option value="amostras">Amostras</option><option value="outro">Outro</option></select></div>
-        <div class="fgi"><label>Destinatário</label><input type="text" id="g-recip" placeholder="Nome ou descrição"></div>
-        <div class="fgi"><label>Cliente Cadastrado</label><select id="g-client"><option value="">Nenhum</option></select></div>
-        <div class="fgi"><label>Custo Estimado</label><div style="padding:8px 12px;border:1px solid var(--blt);border-radius:var(--rs);background:var(--bg2);font-size:14px;font-weight:600;color:var(--brown)"><span id="g-cost">R$ 0,00</span></div></div>
-        <div class="fgi"><label>Lote de Origem</label><select id="g-batch"><option value="">Auto (custo médio)</option></select></div>
-        <div class="fgi sp2"><label>Observações</label><textarea id="g-notes" placeholder="Observações..."></textarea></div>
-      </div>
-    </div>
-    <div class="mf"><button class="btn btn-s" onclick="closeOv('ov-gift')">Cancelar</button><button class="btn btn-p" onclick="saveGift()">Registrar Brinde</button></div>
-  </div>
-</div>
-
-<!-- Loss -->
-<div class="ov" id="ov-loss">
-  <div class="modal msm">
-    <div class="mh"><span class="mt">Registrar Perda/Avaria</span><button class="mx" onclick="closeOv('ov-loss')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
-    <div class="mb">
-      <input type="hidden" id="l-id">
-      <div class="fg">
-        <div class="fgi"><label>Produto *</label><select id="l-prod" onchange="calcLoss()"><option value="">Selecione...</option></select></div>
-        <div class="fgi"><label>Quantidade *</label><input type="number" id="l-qty" min="1" value="1" oninput="calcLoss()"></div>
-        <div class="fgi"><label>Data *</label><input type="date" id="l-date"></div>
-        <div class="fgi"><label>Motivo *</label><select id="l-reason"><option value="danificado">Danificado</option><option value="defeituoso">Defeituoso</option><option value="perdido">Perdido</option><option value="vencido">Vencido</option><option value="outro">Outro</option></select></div>
-        <div class="fgi"><label>Custo Estimado</label><div style="padding:8px 12px;border:1px solid var(--blt);border-radius:var(--rs);background:var(--bg2);font-size:14px;font-weight:600;color:var(--err)"><span id="l-cost">R$ 0,00</span></div></div>
-        <div class="fgi"><label>Observações</label><textarea id="l-notes" placeholder="Detalhes..."></textarea></div>
-      </div>
-    </div>
-    <div class="mf"><button class="btn btn-s" onclick="closeOv('ov-loss')">Cancelar</button><button class="btn btn-d" onclick="saveLoss()">Registrar Perda</button></div>
-  </div>
-</div>
-
-<!-- Expense -->
+<!-- Gasto -->
 <div class="ov" id="ov-expense">
   <div class="modal msm">
-    <div class="mh"><span class="mt" id="exp-modal-title">Nova Despesa</span><button class="mx" onclick="closeOv('ov-expense')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="mh"><span class="mt" id="exp-modal-title">Novo Gasto</span><button class="mx" onclick="closeOv('ov-expense')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
     <div class="mb">
       <input type="hidden" id="e-id">
       <div class="fg">
-        <div class="fgi"><label>Descrição *</label><input type="text" id="e-desc" placeholder="Ex: Embalagens, Frete..."></div>
-        <div class="fgi"><label>Categoria *</label><select id="e-cat"><option value="embalagem">Embalagem</option><option value="frete">Frete</option><option value="divulgacao">Divulgação</option><option value="taxa_pagamento">Taxa de pagamento</option><option value="equipamento">Equipamento</option><option value="energia">Energia</option><option value="outro">Outro</option></select></div>
-        <div class="fgi"><label>Valor *</label><div class="ig"><span class="ip">R$</span><input type="number" id="e-val" min="0" step="0.01" placeholder="0,00"></div></div>
+        <div class="fgi"><label>Descrição *</label><input type="text" id="e-desc" placeholder="Ex: Cetim, Elástico, Embalagens..."></div>
+        <div class="fgi"><label>Categoria</label><select id="e-cat"><option value="material">Material (tecido, elástico, linha...)</option><option value="embalagem">Embalagem</option><option value="frete">Frete</option><option value="divulgacao">Divulgação</option><option value="equipamento">Equipamento</option><option value="outro">Outro</option></select></div>
         <div class="fgi"><label>Data *</label><input type="date" id="e-date"></div>
-        <div class="fgi"><label>Pagamento</label><select id="e-pay"><option>Pix</option><option>Dinheiro</option><option>Cartão</option><option>Transferência</option></select></div>
-        <div class="fgi"><label>Status</label><select id="e-status"><option value="pago">Pago</option><option value="pendente">Pendente</option></select></div>
-        <div class="fgi"><label>Observações</label><textarea id="e-notes" placeholder="Obs..."></textarea></div>
+        <div class="fgi"><label>Valor *</label><div class="ig"><span class="ip">R$</span><input type="number" id="e-val" min="0" step="0.01" placeholder="0,00"></div></div>
       </div>
     </div>
     <div class="mf"><button class="btn btn-s" onclick="closeOv('ov-expense')">Cancelar</button><button class="btn btn-p" onclick="saveExp()">Salvar</button></div>
   </div>
 </div>
 
-<!-- Stock Adjustment -->
-<div class="ov" id="ov-adj">
+<!-- Produção -->
+<div class="ov" id="ov-production">
   <div class="modal msm">
-    <div class="mh"><span class="mt">Ajuste Manual de Estoque</span><button class="mx" onclick="closeOv('ov-adj')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="mh"><span class="mt" id="prod-modal-title">Registrar Produção</span><button class="mx" onclick="closeOv('ov-production')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
     <div class="mb">
+      <input type="hidden" id="p-id">
       <div class="fg">
-        <div class="fgi"><label>Produto *</label><select id="adj-prod"><option value="">Selecione...</option></select></div>
-        <div class="fgi"><label>Tipo *</label><select id="adj-type"><option value="entrada">Entrada (+)</option><option value="saida">Saída (-)</option></select></div>
-        <div class="fgi"><label>Quantidade *</label><input type="number" id="adj-qty" min="1" value="1"></div>
-        <div class="fgi"><label>Data</label><input type="date" id="adj-date"></div>
-        <div class="fgi"><label>Motivo *</label><input type="text" id="adj-reason" placeholder="Descreva o motivo"></div>
+        <div class="fgi"><label>Produto *</label><select id="p-prod"><option value="">Selecione...</option></select></div>
+        <div class="fgi"><label>Tamanho</label><select id="p-size"><option value="">— Sem tamanho —</option><option value="P">P</option><option value="M">M</option><option value="G">G</option><option value="GG">GG</option><option value="Único">Único</option><option value="Infantil">Infantil</option></select></div>
+        <div class="fgi"><label>Quantidade *</label><input type="number" id="p-qty" min="1" value="1" placeholder="1"></div>
+        <div class="fgi"><label>Data de Fabricação *</label><input type="date" id="p-date"></div>
       </div>
-      <div style="margin-top:12px;padding:10px 13px;background:var(--warn-bg);border-radius:var(--rs);font-size:12.5px;color:var(--warn)">&#9888; Ajustes são registrados no histórico. Use somente quando necessário.</div>
     </div>
-    <div class="mf"><button class="btn btn-s" onclick="closeOv('ov-adj')">Cancelar</button><button class="btn btn-p" onclick="saveAdj()">Aplicar Ajuste</button></div>
+    <div class="mf"><button class="btn btn-s" onclick="closeOv('ov-production')">Cancelar</button><button class="btn btn-p" onclick="saveProd()">Salvar</button></div>
   </div>
 </div>
 
-<!-- View Detail -->
-<div class="ov" id="ov-view">
-  <div class="modal">
-    <div class="mh"><span class="mt" id="view-title">Detalhes</span><button class="mx" onclick="closeOv('ov-view')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
-    <div class="mb" id="view-body"></div>
-    <div class="mf"><button class="btn btn-s" onclick="closeOv('ov-view')">Fechar</button></div>
+<!-- Venda -->
+<div class="ov" id="ov-sale">
+  <div class="modal msm">
+    <div class="mh"><span class="mt" id="sale-modal-title">Nova Venda</span><button class="mx" onclick="closeOv('ov-sale')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="mb">
+      <input type="hidden" id="s-id">
+      <div class="fg">
+        <div class="fgi"><label>Produto *</label><select id="s-prod" onchange="fillSalePrice()"><option value="">Selecione...</option></select></div>
+        <div class="fgi"><label>Tamanho</label><select id="s-size" onchange="fillSalePrice()"><option value="">— Sem tamanho —</option><option value="P">P</option><option value="M">M</option><option value="G">G</option><option value="GG">GG</option><option value="Único">Único</option><option value="Infantil">Infantil</option></select></div>
+        <div class="fgi"><label>Quantidade *</label><input type="number" id="s-qty" min="1" value="1" placeholder="1" oninput="fillSalePrice()"></div>
+        <div class="fgi"><label>Preço unitário cobrado *</label><div class="ig"><span class="ip">R$</span><input type="number" id="s-price" min="0" step="0.01" placeholder="0,00" oninput="calcSaleTotal()"></div></div>
+        <div class="fgi"><label>Total da Venda</label><div class="ig total-display" id="s-total-display">R$ 0,00</div></div>
+        <div class="fgi"><label>Data *</label><input type="date" id="s-date"></div>
+        <div class="fgi"><label>Situação do Pagamento</label><select id="s-status"><option value="pago">Pago</option><option value="pendente">Pendente</option><option value="cancelado">Cancelado</option></select></div>
+        <div class="fgi"><label>Observações</label><input type="text" id="s-notes" placeholder="Obs. opcionais..."></div>
+      </div>
+      <div class="price-hint" id="s-price-hint"></div>
+    </div>
+    <div class="mf"><button class="btn btn-s" onclick="closeOv('ov-sale')">Cancelar</button><button class="btn btn-p" onclick="saveSale()">Registrar Venda</button></div>
+  </div>
+</div>
+
+<!-- Brinde -->
+<div class="ov" id="ov-gift">
+  <div class="modal msm">
+    <div class="mh"><span class="mt" id="gift-modal-title">Novo Brinde</span><button class="mx" onclick="closeOv('ov-gift')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="mb">
+      <input type="hidden" id="g-id">
+      <div class="fg">
+        <div class="fgi"><label>Produto *</label><select id="g-prod"><option value="">Selecione...</option></select></div>
+        <div class="fgi"><label>Tamanho</label><select id="g-size"><option value="">— Sem tamanho —</option><option value="P">P</option><option value="M">M</option><option value="G">G</option><option value="GG">GG</option><option value="Único">Único</option><option value="Infantil">Infantil</option></select></div>
+        <div class="fgi"><label>Quantidade *</label><input type="number" id="g-qty" min="1" value="1" placeholder="1"></div>
+        <div class="fgi"><label>Data *</label><input type="date" id="g-date"></div>
+      </div>
+    </div>
+    <div class="mf"><button class="btn btn-s" onclick="closeOv('ov-gift')">Cancelar</button><button class="btn btn-p" onclick="saveGift()">Registrar Brinde</button></div>
+  </div>
+</div>
+
+<!-- Perda -->
+<div class="ov" id="ov-loss">
+  <div class="modal msm">
+    <div class="mh"><span class="mt" id="loss-modal-title">Registrar Perda</span><button class="mx" onclick="closeOv('ov-loss')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="mb">
+      <input type="hidden" id="l-id">
+      <div class="fg">
+        <div class="fgi"><label>Produto *</label><select id="l-prod"><option value="">Selecione...</option></select></div>
+        <div class="fgi"><label>Tamanho</label><select id="l-size"><option value="">— Sem tamanho —</option><option value="P">P</option><option value="M">M</option><option value="G">G</option><option value="GG">GG</option><option value="Único">Único</option><option value="Infantil">Infantil</option></select></div>
+        <div class="fgi"><label>Quantidade *</label><input type="number" id="l-qty" min="1" value="1" placeholder="1"></div>
+        <div class="fgi"><label>Data *</label><input type="date" id="l-date"></div>
+        <div class="fgi"><label>Motivo</label><select id="l-reason"><option value="danificado">Danificado</option><option value="defeituoso">Defeituoso</option><option value="perdido">Perdido</option><option value="outro">Outro</option></select></div>
+      </div>
+    </div>
+    <div class="mf"><button class="btn btn-s" onclick="closeOv('ov-loss')">Cancelar</button><button class="btn btn-d" onclick="saveLoss()">Registrar Perda</button></div>
   </div>
 </div>
 
 <!-- Confirm -->
 <div class="ov" id="ov-confirm">
   <div class="modal msm">
-    <div class="mb" style="padding:28px 24px">
-      <div style="width:52px;height:52px;border-radius:50%;background:var(--err-bg);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;color:var(--err)">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-      </div>
-      <div style="text-align:center">
-        <h3 id="conf-title" style="font-family:var(--fd);font-size:17px;margin-bottom:7px">Confirmar</h3>
-        <p id="conf-msg" style="font-size:13.5px;color:var(--text2)">Esta ação não pode ser desfeita.</p>
-      </div>
-    </div>
-    <div class="mf"><button class="btn btn-s" onclick="closeOv('ov-confirm')">Cancelar</button><button class="btn btn-d" id="conf-ok">Confirmar</button></div>
+    <div class="mh"><span class="mt" id="con-title">Confirmar</span><button class="mx" onclick="closeOv('ov-confirm')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="mb"><p id="con-msg" style="font-size:14px;color:var(--text2);line-height:1.6"></p></div>
+    <div class="mf"><button class="btn btn-s" onclick="closeOv('ov-confirm')">Cancelar</button><button class="btn btn-d" id="con-ok">Confirmar</button></div>
   </div>
 </div>
 
